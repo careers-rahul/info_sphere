@@ -77,7 +77,7 @@ class _DetailedArticleScreenState extends State<DetailedArticleScreen> {
         if (!view.hasConnection) {
           return Center(
             child: NoInternetWidget(
-              retry: loadRequest(),
+              retry: loadRequest,
             ),
           );
         }
