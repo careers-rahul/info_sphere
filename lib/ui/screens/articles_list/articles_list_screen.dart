@@ -72,7 +72,9 @@ class _ArticlesListScreenState extends State<ArticlesListScreen> {
             return Center(
               child: NoInternetWidget(
                 retry: () {
-                  view.getArticles(getUrl(widget.newsCategory));
+                  if (view.hasConnection) {
+                    view.getArticles(getUrl(widget.newsCategory));
+                  }
                 },
               ),
             );
@@ -116,7 +118,7 @@ class _ArticlesListScreenState extends State<ArticlesListScreen> {
                   Expanded(
                     child: ListView.builder(
                       physics: const BouncingScrollPhysics(),
-                      padding: const EdgeInsets.symmetric(vertical: 8),
+                      padding: const EdgeInsets.only(bottom: 32),
                       itemCount: view.displayedArticles.length + (view.isLoading ? 1 : 0),
                       itemBuilder: (context, index) {
                         if (index == view.displayedArticles.length) {
