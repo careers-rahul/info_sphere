@@ -37,7 +37,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
       },
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Profile'),
+          title: const Text('Settings'),
           actions: [
             Consumer<SettingsViewModel>(builder: (context, view, child) {
               return view.isReadOnly
@@ -126,6 +126,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                           FilteringTextInputFormatter.allow(RegExp('[A-Za-z ]+')),
                         ],
                         onChanged: (value) => view.name = value,
+                        selectionControls: null,
                       );
                     }),
                     const Padding(
