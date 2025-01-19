@@ -48,11 +48,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                           builder: (context) {
                             return LogOutExitAlert(
                               onYesTap: () async {
-                                await StoragePrefUtils.setName(null).then((_) async {
-                                  await StoragePrefUtils.setTheme(null).then((_) {
-                                    exit(0);
-                                  });
-                                });
+                                await view.logout();
+                                exit(0);
                               },
                               onNoTap: () {
                                 Navigator.pop(context);

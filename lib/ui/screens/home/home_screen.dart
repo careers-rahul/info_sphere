@@ -39,7 +39,7 @@ class _HomeScreenState extends State<HomeScreen> {
               onPressed: () {
                 Navigator.pushNamed(context, SettingsScreen.route);
               },
-              icon: const Icon(Icons.person),
+              icon: const Icon(Icons.settings),
             ),
             const SizedBox(width: 12),
           ],

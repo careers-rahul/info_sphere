@@ -19,4 +19,10 @@ class SettingsViewModel extends AppBaseModel {
     StoragePrefUtils.setName(name);
     isReadOnly = true;
   }
+
+  Future<void> logout() async {
+    await StoragePrefUtils.setName(null);
+    await StoragePrefUtils.setTheme(null);
+    AppThemes().appThemeNotifier.value = ThemeMode.light;
+  }
 }
